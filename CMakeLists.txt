@@ -241,7 +241,7 @@ macro(CREATE_SYMLINK SRC_FILE DEST_FILE)
     get_filename_component(LINK_TARGET "${SRC_FILE}" NAME)
     execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink "${LINK_TARGET}" ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${DEST_FILE} WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
     execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink "${LINK_TARGET}" ${DEST_FILE} WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-  endif(WIN32 AND NOT CYGWIN AND NOT MSYS)
+  endif(WIN32 AND NOT CYGWIN)
 endmacro()
 
 # libpng is a library so default to 'lib'
